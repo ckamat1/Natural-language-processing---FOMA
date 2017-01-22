@@ -1,0 +1,11 @@
+read lexc able.lexc
+def Lexicon;         
+def YourRule1 [[a b l e %+ i t y] -> [a b i l i t y]] ;
+def YourRule2 [y -> i e || _ "+" s] ;
+def YourRule3 [n -> n n || _ "+" [a|e|i|o|u]] ;
+def YourRule4 [[a|e|i|o|u] -> 0 || _ "+" [a|e|i|o|u]] ;
+def YourRule5 [[..] -> e || [s|z|x|s h|c h] _ "+" s] ;
+def Cleanup "+" -> 0;
+
+regex Lexicon .o. YourRule1 .o. YourRule2 .o. YourRule3 .o. YourRule4 .o. YourRule5 .o. Cleanup;
+pairs
